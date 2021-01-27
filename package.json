@@ -4,6 +4,7 @@
     "@babel/eslint-parser": "^7.12.1",
     "@vue/component-compiler-utils": "^3.2.0",
     "autoprefixer": "^9.8.6",
+    "dotenv": "^8.2.0",
     "eslint": "^7.18.0",
     "eslint-plugin-vue": "^7.4.1",
     "parcel-bundler": "^1.12.4",
@@ -15,6 +16,7 @@
     "axios": "^0.21.1",
     "lodash": "^4.17.20",
     "regenerator-runtime": "^0.13.7",
+    "swiper": "^6.4.8",
     "vue": "^2.6.12",
     "vue-hot-reload-api": "^2.3.4",
     "vuex": "^3.6.0"

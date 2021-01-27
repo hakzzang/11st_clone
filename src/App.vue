@@ -3,17 +3,19 @@
     <l-n-b>d</l-n-b>
     <my-header>
     </my-header>
+    <billboard></billboard>
   </div>
 </template>
 
 <script>
 import LNB from '~/src/components/LNB'
 import MyHeader from "~/src/components/MyHeader"
-
+import Billboard from "~/src/components/Billboard";
 export default {
   components: {
     LNB,
-    MyHeader
+    MyHeader,
+    Billboard
   }
 }
 
@@ -22,12 +24,5 @@ export default {
 <style lang="scss">
   @import "./scss/main.scss";
 
-  .container {
-    display: flex;
-    .item {
-      width: 100px;
-      height: 100px;
-      background-color:royalblue;
-    }
-  }
+
 </style>
