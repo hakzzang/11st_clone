@@ -53,6 +53,7 @@
             </li>
           </ul>
         </div>
+        <!-- OUTLET -->
         <div
           ref="outlets"
           class="group outlets">
@@ -73,6 +74,57 @@
                   :src="item.src"
                   :alt="item.name"
                   width="250" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- PARTNERS -->
+        <div
+          ref="partners"
+          class="group partners">
+          <div
+            class="group__title"
+            @click="toggleGroup('partners')">
+            {{ navigations.partners.title }}
+            <div class="toggle-list"></div>
+          </div>
+          <ul
+            v-show="isShowPartners"
+            class="group__list">
+            <li
+              v-for="item in navigations.partners.list"
+              :key="item.name">
+              <a :href="item.href">
+                <img
+                  :src="item.src"
+                  :alt="item.name"
+                  width="112" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- BRANDMALL -->
+        <div
+          ref="brandMall"
+          class="group brand-mall">
+          <div
+            class="group__title"
+            @click="toggleGroup('brandMall')">
+            {{ navigations.brandMall.title }}
+            <div class="toggle-list"></div>
+          </div>
+          <ul
+            v-show="isShowBrandMall"
+            class="group__list">
+            <li
+              v-for="item in navigations.brandMall.list"
+              :key="item.name">
+              <a :href="item.href">
+                <img
+                  :src="item.src"
+                  :alt="item.name"
+                  width="55" />
+                <span class="brand-name">{{ item.name }}</span>
               </a>
             </li>
           </ul>
@@ -206,6 +258,7 @@ nav {
         font-weight: 700;
         padding: 14px 25px;
         position: relative;
+
         .toggle-list {
           position: absolute;
           top: 0;
@@ -215,6 +268,7 @@ nav {
           display: flex;
           justify-content: center;
           align-items: center;
+
           &::after {
             content: "";
             display: block;
@@ -233,7 +287,15 @@ nav {
         li {
           display: flex;
           align-items: center;
-
+          box-sizing: border-box;
+          cursor: pointer;
+          a {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+          }
         }
       }
     }
@@ -347,8 +409,59 @@ nav {
           padding-bottom: 25px;
 
           li {
+            height: auto;
             margin-top: 10px;
             padding-left: 25px;
+          }
+        }
+      }
+
+      &.partners {
+        .group__title {
+          cursor: pointer;
+        }
+
+        .group__list {
+          display: flex;
+          flex-wrap: wrap;
+          padding-bottom: 25px;
+
+          li {
+            width: 50%;
+            height: 60px;
+
+            a {
+              justify-content: center;
+            }
+          }
+        }
+      }
+
+      &.brand-mall {
+        .group__title {
+          cursor: pointer;
+        }
+
+        .group__list {
+          display: flex;
+          flex-wrap: wrap;
+          padding-bottom: 25px;
+          li {
+            width: 33.33%;
+            height: auto;
+            margin-top: 20px;
+
+            &:nth-child(-n+3) {
+              margin-top: 0;
+            }
+            a {
+              justify-content: center;
+              flex-direction: column;
+              span.brand-name {
+                font-size: 14px;
+                color: #666;
+              }
+            }
           }
         }
       }
