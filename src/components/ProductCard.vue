@@ -1,5 +1,5 @@
 <template>
-  <a class="product-card">
+  <a class="time-deal-card">
     <div
       :class="{ loading: imageLoading }"
       class="thumbnail"
@@ -122,7 +122,7 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-  .product-card {
+  .time-deal-card {
     display: block;
     width: 394px;
     height: 394px;
@@ -130,12 +130,15 @@ export default {
     border: 1px solid #ececec;
     border-radius: 6px;
     overflow: hidden;
+    cursor: pointer;
     box-shadow: 0 2px 10px rgba(#000, 0.06);
     .thumbnail {
       height: 198px;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+      transition: 0.4s;
+
       &.loading {
         display: flex;
         justify-content: center;
@@ -153,6 +156,9 @@ export default {
           opacity: .2;
         }
       }
+    }
+    .thumbnail:hover {
+      transform: scale(1.05);
     }
     .contents {
       padding: 20px 20px 0;
