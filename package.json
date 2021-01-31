@@ -15,8 +15,12 @@
   "dependencies": {
     "axios": "^0.21.1",
     "dayjs": "^1.10.4",
+    "intersection-observer": "^0.12.0",
     "lodash": "^4.17.20",
+    "numeral": "^2.0.6",
+    "parcel-plugin-static-files-copy": "^2.5.1",
     "regenerator-runtime": "^0.13.7",
+    "scroll-to": "0.0.2",
     "swiper": "^6.4.8",
     "vue": "^2.6.12",
     "vue-hot-reload-api": "^2.3.4",
@@ -36,5 +40,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "staticFiles": {
+    "staticPath": "public"
+  }
 }
