@@ -8,7 +8,7 @@
 특히 이번 교육을 통해서 <strong>HTML, CSS, VUE</strong>를 배울 수 있었고, <strong>vue를 통한 데이터 바인딩, vue를 통한 데이터 변경, 투박한 HTML 스킬, 투박한 CSS 스킬, JavaScript를 통해서 각종 로직처리</strong> 등을 배울 수 있었습니다.  
 
 ## 앱 사용 화면
-<img src="./screenshot/snapshot01.jpg" width="350">
+<img src="https://github.com/hakzzang/11st_clone/blob/main/screenshot/snapshot01.png" width="720">
 
 ## 기능
 - TimeDeal
