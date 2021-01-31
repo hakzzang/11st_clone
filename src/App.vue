@@ -8,6 +8,10 @@
     <hot-focus></hot-focus>
     <global-banner></global-banner>
     <time-deal></time-deal>
+    <time-deal></time-deal>
+    <time-deal></time-deal>
+    <time-deal></time-deal>
+    <time-deal></time-deal>
   </div>
 </template>
 
@@ -36,6 +40,5 @@ export default {
 
 <style lang="scss">
   @import "./scss/main.scss";
-
 
 </style>

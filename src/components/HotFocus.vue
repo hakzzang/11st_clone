@@ -40,12 +40,15 @@ export default {
       products: []
     }
   },
-  mounted() {
+  created() {
     this.init()
+  },
+  mounted() {
+    this.$lazyLoad(this.$refs.lazyLoadElement)
   },
   methods: {
     async init () {
-      this.$lazyLoad(this.$refs.lazyLoadElement)
+
       this.products = await this.$fetch({
         requestName: 'hotFocus'
       })
