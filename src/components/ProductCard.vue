@@ -97,7 +97,7 @@ export default {
   },
   computed: {
     discountRate () {
-      if(!this.product.listPrice) return ''
+      if (!this.product.listPrice) return ''
 
       const price = this.product.price.value
       const listPrice = this.product.listPrice.value
@@ -250,7 +250,8 @@ export default {
           }
         }
         &__name {
-          color: #666666;
+          // 같은 숫자가 반복되면 3자리로 줄여주면 좋아요~
+          color: #666;
           font-size: 13px;
         }
       }

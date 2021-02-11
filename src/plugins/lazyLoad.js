@@ -4,7 +4,7 @@ export default {
             element.classList.add('lazy-load-element')
             const io = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
-                    if(!entry.isIntersecting) return
+                    if (!entry.isIntersecting) return
 
                     element.classList.add('lazy-loaded')
                 })

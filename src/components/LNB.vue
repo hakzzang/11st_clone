@@ -23,7 +23,7 @@
             <li
               v-for="(item1, index) in navigations.categories.list"
               :key="item1.name"
-              :class="{ hover: categoryHover === index}"
+              :class="{ hover: categoryHover === index }"
               @mouseenter="categoryHover = index">
               <div class="category-icon"></div>
               {{ item1.name }}
@@ -39,7 +39,10 @@
             </li>
           </ul>
         </div>
-        <div class="group major-services">
+
+        <div
+          class="group major-services"
+          @mouseenter="categoryHover = -1">
           <div class="group__title">
             {{ navigations.majorServices.title }}
           </div>
@@ -56,7 +59,8 @@
         <!-- OUTLET -->
         <div
           ref="outlets"
-          class="group outlets">
+          class="group outlets"
+          @mouseenter="categoryHover = -1">
           <div
             class="group__title"
             @click="toggleGroup('outlets')">
@@ -81,7 +85,8 @@
         <!-- PARTNERS -->
         <div
           ref="partners"
-          class="group partners">
+          class="group partners"
+          @mouseenter="categoryHover = -1">
           <div
             class="group__title"
             @click="toggleGroup('partners')">
@@ -106,7 +111,8 @@
         <!-- BRANDMALL -->
         <div
           ref="brandMall"
-          class="group brand-mall">
+          class="group brand-mall"
+          @mouseenter="categoryHover = -1">
           <div
             class="group__title"
             @click="toggleGroup('brandMall')">
@@ -166,6 +172,10 @@ export default {
       return this.$store.state.navigation.isShowLNB
     }
   },
+  // 라이프사이클은 methods 옵션 위에 작성하는 게 권장돼요~
+  created() {
+    this.init()
+  },
   methods: {
     async init() {
       this.navigations = await this.$fetch({
@@ -188,9 +198,6 @@ export default {
 
       }
     }
-  },
-  created() {
-    this.init()
   }
 }
 </script>

@@ -27,9 +27,9 @@
 </template>
 
 <script>
-import ProductCard from '~/src/components/ProductCard'
 import Swiper from 'swiper/bundle'
 import 'swiper/swiper-bundle.css'
+import ProductCard from '~/src/components/ProductCard'
 
 export default {
   components: {
@@ -53,13 +53,14 @@ export default {
         requestName: 'hotFocus'
       })
 
+      // 하나의 코드 스타일을 최대한 유지하면서 작성하는 것이 좋아요~
       this.$nextTick(() => {
         new Swiper(this.$refs.swiper, {
           speed: 1000,
           spaceBetween: 29,
-          slidesPerView:3,
+          slidesPerView: 3,
           slidesPerGroup: 3,
-          loop:true,
+          loop: true,
           navigation: {
             nextEl: '.hot-focus .next',
             prevEl: '.hot-focus .prev'
