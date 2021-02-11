@@ -1,6 +1,7 @@
 <template>
+  <!--Vue 템플릿에서는 this를 사용하지 않는 게 좋아요~-->
   <div
-    :style="`background-color: ${this.currentColor}`"
+    :style="`background-color: ${currentColor}`"
     class="billboard">
     <div class="inner">
       <div
@@ -90,10 +91,10 @@ export default {
               this.currentIndex = realIndex
               this.currentColor = this.billboards[realIndex].color
             },
-            autoplayStart: (swiper) => {
+            autoplayStart: swiper => {
               this.isAutoplay = true
             },
-            autoplayStop: (swiper) => {
+            autoplayStop: swiper => {
               this.isAutoplay = false
             }
           }
@@ -113,7 +114,8 @@ export default {
 </script>
 <style scoped lang="scss">
 .billboard {
-  transition: background-color 1.0s;
+  // 정수로 작성하는 게 좋아요~
+  transition: background-color 1s;
   .inner {
     .swiper-container {
       width: 1240px;

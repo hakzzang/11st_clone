@@ -50,7 +50,9 @@ export default {
   },
   methods: {
     async init () {
-      this.banner = await this.$fetch({requestName:'banner'})
+      this.banner = await this.$fetch({
+        requestName:'banner'
+      })
       this.done = true
     },
     toTop () {

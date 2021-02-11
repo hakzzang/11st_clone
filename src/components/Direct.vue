@@ -16,9 +16,10 @@
           </a>
         </li>
         <li>
+          <!--인수가 없으면 소괄호를 사용하지 않아도 돼요~-->
           <div
             class="open-more"
-            @click="onNav()">
+            @click="onNav">
             <div class="icon"></div>
             <div class="text">
               더보기
@@ -39,7 +40,7 @@ export default {
   created () {
     this.init()
   },
-  methods : {
+  methods: {
     async init () {
       this.directs = await this.$fetch({
         requestName: 'directs'

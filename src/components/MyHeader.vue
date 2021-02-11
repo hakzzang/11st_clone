@@ -27,11 +27,12 @@
             <div class="swiper-wrapper">
               <!-- Slides -->
               <div
-                v-for="(rank,index) in rankings.rankings"
+                v-for="(rank, index) in rankings.rankings"
                 :key="rank.name"
                 class="swiper-slide">
                 <a :href="rank.href">
-                  <span class="index"> {{ index + 1 }} </span>
+                  <!--실제로 띄어쓰기가 화면에 영향을 줄 수도 있어요~-->
+                  <span class="index"> {{ index + 1 }}</span>
                   <span class="name">{{ rank.name }}</span>
                 </a>
               </div>
@@ -141,7 +142,7 @@
 </template>
 
 <script>
-import Swiper from 'swiper'
+import Swiper from 'swiper/bundle'
 import 'swiper/swiper-bundle.css'
 import dayjs from 'dayjs'
 import _throttle from 'lodash/throttle'
@@ -162,9 +163,6 @@ export default {
       tabIndex: 0,
       isFixed: false
     }
-  }, mounted() {
-    this.init()
-
   },
   computed: {
     referenceDate() {
@@ -177,6 +175,10 @@ export default {
         return start <= index && index <= end
       })
     }
+  },
+  // 라이프사이클은 computed 옵션보다 더 나중에 작성하는 것이 권장돼요~
+  mounted() {
+    this.init()
   },
   methods: {
     async init() {
@@ -231,7 +233,10 @@ header {
       height: 60px;
       border-radius: 50%;
       cursor: pointer;
-      box-shadow: 0 2px 6px rgba(#000, 0.06), 0 0 1px rgba(#000, 0.4);
+      // CSS에서 쉼표로 구분하는 내용은 줄바꿈 처리하는 게 좋아요~
+      box-shadow:
+        0 2px 6px rgba(#000, 0.06),
+        0 0 1px rgba(#000, 0.4);
 
       &::after {
         display: block;
@@ -352,7 +357,7 @@ header {
           transform: rotate(45deg);
         }
       }
-      .ranking-wrap{
+      .ranking-wrap {
         position: absolute;
         top: 44px;
         z-index: 2;
@@ -361,7 +366,7 @@ header {
         border: 1px solid #eee;
         border-radius: 4px;
         box-sizing: border-box;
-        box-shadow: 0 6px 24px rgba(#000, 0.1);
+        box-shadow: 0 6px 24px rgba(#000, .1);
         background-color: #fff;
         .title {
           display: flex;
